@@ -9,6 +9,10 @@ public class Farmer implements Rider, Botanist, Person {
 
     private Farm farm;
 
+    public Farmer(Farm farm){
+        this.farm = farm;
+    }
+
 
     @Override
     public void plant(Crop crop, CropRow cropRow) {
@@ -34,5 +38,13 @@ public class Farmer implements Rider, Botanist, Person {
     @Override
     public String makeNoise() {
         return null;
+    }
+
+    public Farm getFarm() {
+        return farm;
+    }
+
+    public void setFarm(Farm farm) {
+        this.farm = farm;
     }
 }
