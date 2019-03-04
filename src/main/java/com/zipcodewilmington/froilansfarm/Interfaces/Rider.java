@@ -6,4 +6,5 @@ public interface Rider {
 
     void dismount(Rideable rideable);
 
+    void rideAllHorses();
 }

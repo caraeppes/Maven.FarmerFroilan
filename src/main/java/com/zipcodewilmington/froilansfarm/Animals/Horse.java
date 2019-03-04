@@ -5,16 +5,21 @@ import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 
+import java.util.List;
+
 public class Horse implements Rideable, Animal {
 
-    int cornEaten = 0;
+    int timesRidden = 0;
+
 
 
     @Override
     public void eat(Edible e) {
-        if(e instanceof EarCorn){
-            cornEaten++;
-        }
+    }
+
+    @Override
+    public List<Edible> getEdiblesEaten() {
+        return null;
     }
 
     @Override
@@ -23,4 +28,13 @@ public class Horse implements Rideable, Animal {
         return null;
     }
 
+    @Override
+    public int getTimesRidden() {
+        return 0;
+    }
+
+    @Override
+    public void setTimesRidden(int timesRidden) {
+
+    }
 }

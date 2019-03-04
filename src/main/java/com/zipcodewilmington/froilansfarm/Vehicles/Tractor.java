@@ -22,4 +22,13 @@ public class Tractor implements FarmVehicle {
         return null;
     }
 
+    @Override
+    public int getTimesRidden() {
+        return 0;
+    }
+
+    @Override
+    public void setTimesRidden(int timesRidden) {
+
+    }
 }

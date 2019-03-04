@@ -5,6 +5,8 @@ import com.zipcodewilmington.froilansfarm.Edibles.Crop;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
 import com.zipcodewilmington.froilansfarm.Interfaces.*;
 
+import java.util.List;
+
 public class Farmer implements Rider, Botanist, Person {
 
     private Farm farm;
@@ -31,8 +33,18 @@ public class Farmer implements Rider, Botanist, Person {
     }
 
     @Override
+    public void rideAllHorses() {
+
+    }
+
+    @Override
     public void eat(Edible e) {
 
+    }
+
+    @Override
+    public List<Edible> getEdiblesEaten() {
+        return null;
     }
 
     @Override
@@ -46,5 +58,13 @@ public class Farmer implements Rider, Botanist, Person {
 
     public void setFarm(Farm farm) {
         this.farm = farm;
+    }
+
+    public void eatFroilansBreakfast() {
+    }
+
+    @Override
+    public void feedAllHorses(int i) {
+
     }
 }

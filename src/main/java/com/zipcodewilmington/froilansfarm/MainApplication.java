@@ -21,13 +21,12 @@ import java.util.List;
  */
 public class MainApplication {
 
+    Farm froilansFarm = new Farm();
+    Farmer froilan = new Farmer(froilansFarm);
+    Field froilansField = froilansFarm.getField();
 
-    public static void main(String[] args) {
 
-        Farm froilansFarm = new Farm();
-        Farmer froilan = new Farmer(froilansFarm);
-        Field froilansField = froilansFarm.getField();
-
+    public void setUpFroilansFarm() {
         CropRow cropRow1 = new CropRow();
         CropRow cropRow2 = new CropRow();
         CropRow cropRow3 = new CropRow();
@@ -69,5 +68,42 @@ public class MainApplication {
         froilansFarmVehicles.add(cropDuster);
 
         Pilot froilanda = new Pilot((Aircraft) cropDuster);
+
+        froilansFarm.getFarmHouse().getPeople().add(froilan);
+        froilansFarm.getFarmHouse().getPeople().add(froilanda);
+
+    }
+
+    public Farm getFroilansFarm() {
+        return froilansFarm;
+    }
+
+    public void setFroilansFarm(Farm froilansFarm) {
+        this.froilansFarm = froilansFarm;
+    }
+
+    public Farmer getFroilan() {
+        return froilan;
+    }
+
+    public void setFroilan(Farmer froilan) {
+        this.froilan = froilan;
+    }
+
+    public Field getFroilansField() {
+        return froilansField;
+    }
+
+    public void setFroilansField(Field froilansField) {
+        this.froilansField = froilansField;
+    }
+
+    public static void main(String[] args) {
+
+
+    }
+
+    public Pilot getFroilanda() {
+        return (Pilot)froilansFarm.getFarmHouse().getPeople().get(1);
     }
 }

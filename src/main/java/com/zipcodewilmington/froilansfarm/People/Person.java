@@ -5,6 +5,7 @@ import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 
 public interface Person extends Eater, NoiseMaker {
 
+    void feedAllHorses(int i);
 }
 
 

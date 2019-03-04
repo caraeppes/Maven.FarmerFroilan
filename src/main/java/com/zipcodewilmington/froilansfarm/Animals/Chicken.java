@@ -5,6 +5,8 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Edibles.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.Crops.Produce;
 
+import java.util.List;
+
 public class Chicken extends Produce implements Animal {
 
     public Chicken(boolean hasBeenFertilized){
@@ -23,6 +25,11 @@ public class Chicken extends Produce implements Animal {
     @Override
     public void eat(Edible e) {
 
+    }
+
+    @Override
+    public List<Edible> getEdiblesEaten() {
+        return null;
     }
 
     @Override
