@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm.FarmStructures;
 
 import com.zipcodewilmington.froilansfarm.Animals.Horse;
+import com.zipcodewilmington.froilansfarm.Crops.Crop;
+import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.FarmVehicle;
 
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ public class Farm {
     private List<ChickenCoop> chickenCoops;
     private List<Stable> stables;
     private List<FarmVehicle> farmVehicles;
+    private List<Edible> harvestedCrops;
 
     public Farm() {
         this.farmHouse = new FarmHouse();
@@ -71,5 +74,9 @@ public class Farm {
 
     public List<Horse> getAllHorses() {
         return null;
+    }
+
+    public List<Edible> getHarvestedCrops() {
+        return harvestedCrops;
     }
 }

@@ -1,23 +1,22 @@
 package com.zipcodewilmington.froilansfarm.Crops;
 
-import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
+import com.zipcodewilmington.froilansfarm.Edibles.Strawberry;
 
-public class CornStalk extends Crop {
+public class StrawberryPlant extends Crop {
 
     private boolean hasBeenFertilized;
     private boolean hasBeenHarvested;
 
-    public CornStalk(boolean hasBeenHarvested, boolean hasBeenFertilized) {
+    public StrawberryPlant(boolean hasBeenHarvested, boolean hasBeenFertilized) {
         super(hasBeenHarvested, hasBeenFertilized);
     }
 
-
     @Override
-    public EarCorn yield() {
+    public Strawberry yield(){
         if(hasBeenFertilized && hasBeenHarvested){
-            return new EarCorn();
+            return new Strawberry();
         }
-        else {
+        else{
             return null;
         }
     }

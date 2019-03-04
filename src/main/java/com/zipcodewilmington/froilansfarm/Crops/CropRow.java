@@ -1,7 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Crops;
 
-import com.zipcodewilmington.froilansfarm.Edibles.Crop;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,5 +25,9 @@ public class CropRow {
 
     public void addCrop(Crop crop){
         crops.add(crop);
+    }
+
+    public Crop getCrop(int index){
+        return crops.get(index);
     }
 }

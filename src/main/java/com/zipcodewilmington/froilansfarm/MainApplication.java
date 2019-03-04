@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 import com.zipcodewilmington.froilansfarm.Crops.CornStalk;
 import com.zipcodewilmington.froilansfarm.Crops.CropRow;
+import com.zipcodewilmington.froilansfarm.Crops.StrawberryPlant;
 import com.zipcodewilmington.froilansfarm.Crops.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.FarmStructures.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
@@ -35,7 +36,7 @@ public class MainApplication {
 
         cropRow1.addCrop(new CornStalk(false, false));
         cropRow2.addCrop(new TomatoPlant(false, false));
-        cropRow3.addCrop(new CornStalk(false, false));
+        cropRow3.addCrop(new StrawberryPlant(false, false));
         cropRow4.addCrop(new TomatoPlant(false, false));
         cropRow5.addCrop(new CornStalk(false, false));
 

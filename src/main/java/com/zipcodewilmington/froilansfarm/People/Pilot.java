@@ -25,6 +25,14 @@ public class Pilot implements Rider, Person {
 
     }
 
+    public Aircraft getAircraft() {
+        return aircraft;
+    }
+
+    public void setAircraft(Aircraft aircraft) {
+        this.aircraft = aircraft;
+    }
+
     @Override
     public void rideAllHorses() {
 

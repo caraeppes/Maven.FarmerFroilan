@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm.People;
 
 import com.zipcodewilmington.froilansfarm.Crops.CropRow;
-import com.zipcodewilmington.froilansfarm.Edibles.Crop;
+import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
 import com.zipcodewilmington.froilansfarm.Interfaces.*;
 

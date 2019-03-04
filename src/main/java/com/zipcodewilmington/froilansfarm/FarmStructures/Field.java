@@ -27,4 +27,8 @@ public class Field {
     public void setCropRows(List<CropRow> cropRows) {
         this.cropRows = cropRows;
     }
+
+    public CropRow getCropRow(int index){
+        return cropRows.get(index);
+    }
 }
