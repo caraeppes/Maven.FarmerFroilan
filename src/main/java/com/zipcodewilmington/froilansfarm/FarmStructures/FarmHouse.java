@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm.FarmStructures;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Person;
+import com.zipcodewilmington.froilansfarm.People.Person;
 
 import java.util.List;
 
