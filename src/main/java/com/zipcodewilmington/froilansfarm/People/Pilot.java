@@ -1,13 +1,9 @@
 package com.zipcodewilmington.froilansfarm.People;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Aircraft;
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
-import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
-import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
+import com.zipcodewilmington.froilansfarm.Interfaces.*;
 
-import java.util.List;
 
-public class Pilot implements Rider, Person {
+public class Pilot extends Person implements Rider {
 
     private Aircraft aircraft;
 
@@ -25,39 +21,15 @@ public class Pilot implements Rider, Person {
 
     }
 
-    public Aircraft getAircraft() {
-        return aircraft;
-    }
-
-    public void setAircraft(Aircraft aircraft) {
-        this.aircraft = aircraft;
-    }
-
-    @Override
-    public void rideAllHorses() {
-
-    }
-
     @Override
     public void eat(Edible e) {
 
     }
 
-    @Override
-    public List<Edible> getEdiblesEaten() {
-        return null;
-    }
 
     @Override
     public String makeNoise() {
         return null;
     }
 
-    public void eatFroilandasBreakfast() {
-    }
-
-    @Override
-    public void feedAllHorses(int i) {
-
-    }
 }

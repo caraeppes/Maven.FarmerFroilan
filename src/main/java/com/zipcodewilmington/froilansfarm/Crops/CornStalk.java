@@ -14,12 +14,7 @@ public class CornStalk extends Crop {
 
     @Override
     public EarCorn yield() {
-        if(hasBeenFertilized && hasBeenHarvested){
-            return new EarCorn();
-        }
-        else {
-            return null;
-        }
+        return null;
     }
 
 }

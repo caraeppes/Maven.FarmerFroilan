@@ -15,20 +15,4 @@ public abstract class Crop extends Produce {
 
     public abstract Edible yield();
 
-
-    public boolean isHasBeenHarvested() {
-        return hasBeenHarvested;
-    }
-
-    public void setHasBeenHarvested(boolean hasBeenHarvested) {
-        this.hasBeenHarvested = hasBeenHarvested;
-    }
-
-    public boolean isHasBeenFertilized() {
-        return hasBeenFertilized;
-    }
-
-    public void setHasBeenFertilized(boolean hasBeenFertilized) {
-        this.hasBeenFertilized = hasBeenFertilized;
-    }
-}
+   }
