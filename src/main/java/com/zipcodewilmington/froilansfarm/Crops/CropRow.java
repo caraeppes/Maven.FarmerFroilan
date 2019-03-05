@@ -19,15 +19,8 @@ public class CropRow {
         return crops;
     }
 
-    public void setCrops(List<Crop> crops) {
-        this.crops = crops;
-    }
-
     public void addCrop(Crop crop){
         crops.add(crop);
     }
 
-    public Crop getCrop(int index){
-        return crops.get(index);
-    }
 }

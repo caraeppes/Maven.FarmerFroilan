@@ -9,26 +9,8 @@ public class Field {
 
      private List<CropRow> cropRows = new ArrayList<>();
 
-    public Field(){}
 
     public Field(List<CropRow> cropRows) {
         this.cropRows = cropRows;
-    }
-
-    public void addCropRow(CropRow cropRow){
-        cropRows.add(cropRow);
-    }
-
-
-    public List<CropRow> getCropRows() {
-        return cropRows;
-    }
-
-    public void setCropRows(List<CropRow> cropRows) {
-        this.cropRows = cropRows;
-    }
-
-    public CropRow getCropRow(int index){
-        return cropRows.get(index);
     }
 }

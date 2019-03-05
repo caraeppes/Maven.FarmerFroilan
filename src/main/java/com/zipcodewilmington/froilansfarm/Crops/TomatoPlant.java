@@ -13,12 +13,7 @@ public class TomatoPlant extends Crop {
 
     @Override
     public Tomato yield(){
-        if(hasBeenFertilized && hasBeenHarvested){
-            return new Tomato();
-        }
-        else{
-            return null;
-        }
+        return  null;
     }
 
 }

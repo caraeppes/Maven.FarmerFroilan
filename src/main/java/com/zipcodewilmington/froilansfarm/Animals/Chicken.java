@@ -14,22 +14,12 @@ public class Chicken extends Produce implements Animal {
     }
 
     public Edible yield() {
-        if(!getHasBeenFertilized()){
-            return new EdibleEgg();
-        }
-        else {
-            return null;
-        }
+        return null;
     }
 
     @Override
     public void eat(Edible e) {
 
-    }
-
-    @Override
-    public List<Edible> getEdiblesEaten() {
-        return null;
     }
 
     @Override

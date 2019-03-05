@@ -9,8 +9,6 @@ import java.util.List;
 
 public class Horse implements Rideable, Animal {
 
-    int timesRidden = 0;
-
 
 
     @Override
@@ -18,23 +16,8 @@ public class Horse implements Rideable, Animal {
     }
 
     @Override
-    public List<Edible> getEdiblesEaten() {
-        return null;
-    }
-
-    @Override
     public String makeNoise() {
 
         return null;
-    }
-
-    @Override
-    public int getTimesRidden() {
-        return 0;
-    }
-
-    @Override
-    public void setTimesRidden(int timesRidden) {
-
     }
 }
