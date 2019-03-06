@@ -13,4 +13,19 @@ public class Field {
     public Field(List<CropRow> cropRows) {
         this.cropRows = cropRows;
     }
+
+    public Field() {
+    }
+
+    public List<CropRow> getCropRows() {
+        return cropRows;
+    }
+
+    public void setCropRows(List<CropRow> cropRows) {
+        this.cropRows = cropRows;
+    }
+
+    public void add(CropRow cropRow){
+        cropRows.add(cropRow);
+    }
 }

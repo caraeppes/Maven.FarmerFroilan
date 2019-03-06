@@ -44,5 +44,7 @@ public class Farmer extends PersonDecorator implements Rider, Botanist, Person {
         return null;
     }
 
-
+    public Farm getFarm() {
+        return farm;
+    }
 }

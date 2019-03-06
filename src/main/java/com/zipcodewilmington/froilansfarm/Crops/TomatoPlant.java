@@ -11,6 +11,11 @@ public class TomatoPlant extends Crop {
         super(hasBeenHarvested, hasBeenFertilized);
     }
 
+    public TomatoPlant(){
+        super(false, false);
+
+    }
+
     @Override
     public Tomato yield(){
         return  null;

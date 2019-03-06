@@ -4,13 +4,17 @@ import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
 
 public class CornStalk extends Crop {
 
-    private boolean hasBeenFertilized;
-    private boolean hasBeenHarvested;
+    private boolean hasBeenFertilized = false;
+    private boolean hasBeenHarvested = false;
 
     public CornStalk(boolean hasBeenHarvested, boolean hasBeenFertilized) {
         super(hasBeenHarvested, hasBeenFertilized);
     }
 
+    public CornStalk(){
+        super(false, false);
+
+    }
 
     @Override
     public EarCorn yield() {
