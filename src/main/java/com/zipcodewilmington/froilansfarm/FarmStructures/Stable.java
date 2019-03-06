@@ -1,12 +1,11 @@
 package com.zipcodewilmington.froilansfarm.FarmStructures;
 
-import com.zipcodewilmington.froilansfarm.Animals.Horse;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Stable {
+public class Stable extends Shelter {
 
-    List<Horse> horses = new ArrayList<>();
-
+    public Stable(List inhabitants) {
+        super(inhabitants);
+    }
 }

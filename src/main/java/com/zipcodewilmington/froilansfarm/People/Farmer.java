@@ -4,12 +4,14 @@ import com.zipcodewilmington.froilansfarm.Crops.CropRow;
 import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
 import com.zipcodewilmington.froilansfarm.Interfaces.*;
+import com.zipcodewilmington.froilansfarm.PersonDecorator;
 
-public class Farmer extends Person implements Rider, Botanist {
+public class Farmer extends PersonDecorator implements Rider, Botanist, Person {
 
     private Farm farm;
 
-    public Farmer(Farm farm){
+    public Farmer(Person person, Farm farm){
+        super(person);
         this.farm = farm;
     }
 

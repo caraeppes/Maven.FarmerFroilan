@@ -8,4 +8,5 @@ public class Farm {
     private FarmHouse farmHouse;
     private List<ChickenCoop> chickenCoops;
     private List<Stable> stables;
+    private Field field;
 }

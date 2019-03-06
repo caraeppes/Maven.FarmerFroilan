@@ -1,12 +1,11 @@
 package com.zipcodewilmington.froilansfarm.FarmStructures;
 
-import com.zipcodewilmington.froilansfarm.People.Person;
 
 import java.util.List;
 
-public class FarmHouse {
+public class FarmHouse extends Shelter{
 
-    private List<Person> people;
-
-    public FarmHouse() {}
+    public FarmHouse(List inhabitants) {
+        super(inhabitants);
+    }
 }
