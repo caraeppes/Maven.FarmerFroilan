@@ -6,6 +6,8 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
 public class Tractor extends FarmVehicle {
 
+    private boolean isMounted = false;
+
     public Edible harvest(Crop crop){
         return null;
     }
@@ -20,5 +22,16 @@ public class Tractor extends FarmVehicle {
 
         return null;
     }
+
+    @Override
+    public boolean isMounted() {
+        return isMounted;
+    }
+
+    @Override
+    public void setMounted(boolean isMounted) {
+        this.isMounted = isMounted;
+    }
+
 
 }

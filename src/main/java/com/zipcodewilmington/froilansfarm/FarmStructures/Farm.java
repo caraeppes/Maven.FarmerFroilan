@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm.FarmStructures;
 
 
+import com.zipcodewilmington.froilansfarm.Vehicles.FarmVehicle;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class Farm {
     private List<ChickenCoop> chickenCoops;
     private List<Stable> stables;
     private Field field;
+    private List<FarmVehicle> farmVehicles;
 
 
     public Farm() {
@@ -17,7 +20,7 @@ public class Farm {
         field = new Field();
         chickenCoops = new ArrayList<>();
         stables = new ArrayList<>();
-
+        farmVehicles = new ArrayList<>();
 
     }
 
@@ -52,4 +55,14 @@ public class Farm {
     public void setField(Field field) {
         this.field = field;
     }
+
+    public List<FarmVehicle> getFarmVehicles() {
+        return farmVehicles;
+    }
+
+    public void setFarmVehicles(List<FarmVehicle> farmVehicles) {
+        this.farmVehicles = farmVehicles;
+    }
+
+
 }

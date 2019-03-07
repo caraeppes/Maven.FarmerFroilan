@@ -15,6 +15,9 @@ public class ChickenCoop extends Shelter<Chicken>{
         super();
     }
 
+    public void addChickens(List<Chicken> chickenList){
+       addAll(chickenList);
+    }
 
 
 }

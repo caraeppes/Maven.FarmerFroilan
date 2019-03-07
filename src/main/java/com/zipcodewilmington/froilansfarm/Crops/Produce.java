@@ -12,4 +12,5 @@ public abstract class Produce {
     }
 
     public abstract Edible yield();
+
 }

@@ -21,4 +21,24 @@ public class CornStalk extends Crop {
         return null;
     }
 
+
+    @Override
+    public boolean isHasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    @Override
+    public void setHasBeenFertilized(boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
+
+    @Override
+    public boolean isHasBeenHarvested() {
+        return hasBeenHarvested;
+    }
+
+    @Override
+    public void setHasBeenHarvested(boolean hasBeenHarvested) {
+        this.hasBeenHarvested = hasBeenHarvested;
+    }
 }

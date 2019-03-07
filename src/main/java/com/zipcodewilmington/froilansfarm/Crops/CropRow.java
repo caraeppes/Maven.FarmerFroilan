@@ -23,4 +23,7 @@ public class CropRow {
         crops.add(crop);
     }
 
+    public void setCrops(List<Crop> crops) {
+        this.crops = crops;
+    }
 }

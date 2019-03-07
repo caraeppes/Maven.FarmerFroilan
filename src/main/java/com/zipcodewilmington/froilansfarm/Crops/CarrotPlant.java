@@ -1,42 +1,39 @@
 package com.zipcodewilmington.froilansfarm.Crops;
 
-import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
 
-public class TomatoPlant extends Crop {
+import com.zipcodewilmington.froilansfarm.Edibles.Carrot;
 
-    private boolean hasBeenFertilized;
-    private boolean hasBeenHarvested;
+public class CarrotPlant extends Crop {
 
-    public TomatoPlant(boolean hasBeenHarvested, boolean hasBeenFertilized) {
+    private boolean hasBeenFertilized = false;
+    private boolean hasBeenHarvested = false;
+
+    public CarrotPlant(boolean hasBeenHarvested, boolean hasBeenFertilized) {
         super(hasBeenHarvested, hasBeenFertilized);
     }
 
-    public TomatoPlant(){
+    public CarrotPlant() {
         super(false, false);
 
     }
 
     @Override
-    public Tomato yield(){
-        return  null;
+    public Carrot yield() {
+        return null;
     }
 
-    @Override
     public boolean isHasBeenFertilized() {
         return hasBeenFertilized;
     }
 
-    @Override
     public void setHasBeenFertilized(boolean hasBeenFertilized) {
         this.hasBeenFertilized = hasBeenFertilized;
     }
 
-    @Override
     public boolean isHasBeenHarvested() {
         return hasBeenHarvested;
     }
 
-    @Override
     public void setHasBeenHarvested(boolean hasBeenHarvested) {
         this.hasBeenHarvested = hasBeenHarvested;
     }

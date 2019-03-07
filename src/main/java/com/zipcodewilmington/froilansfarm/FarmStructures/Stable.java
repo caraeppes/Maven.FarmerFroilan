@@ -17,6 +17,9 @@ public class Stable extends Shelter {
     }
 
 
+    public void addHorses(List<Horse> horses){
+        addAll(horses);
+    }
 
 
 

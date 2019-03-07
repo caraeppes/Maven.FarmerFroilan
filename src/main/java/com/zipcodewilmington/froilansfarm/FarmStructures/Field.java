@@ -27,5 +27,8 @@ public class Field {
 
     public void add(CropRow cropRow){
         cropRows.add(cropRow);
+
     }
+
+
 }
