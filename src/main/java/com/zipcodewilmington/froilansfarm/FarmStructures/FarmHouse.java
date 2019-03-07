@@ -8,4 +8,10 @@ public class FarmHouse extends Shelter{
     public FarmHouse(List inhabitants) {
         super(inhabitants);
     }
+
+    public FarmHouse() {
+        super();
+    }
+
+
 }

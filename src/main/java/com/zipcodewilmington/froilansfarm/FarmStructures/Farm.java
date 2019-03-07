@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.FarmStructures;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Farm {
@@ -10,6 +11,15 @@ public class Farm {
     private List<Stable> stables;
     private Field field;
 
+
+    public Farm() {
+        farmHouse = new FarmHouse();
+        field = new Field();
+        chickenCoops = new ArrayList<>();
+        stables = new ArrayList<>();
+
+
+    }
 
     public FarmHouse getFarmHouse() {
         return farmHouse;

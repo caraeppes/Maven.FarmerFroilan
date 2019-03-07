@@ -13,6 +13,10 @@ public class Chicken extends Produce implements Animal {
         super(hasBeenFertilized);
     }
 
+    public Chicken(){
+        super(false);
+    }
+
     public Edible yield() {
         return null;
     }
