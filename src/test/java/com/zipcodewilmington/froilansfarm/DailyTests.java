@@ -10,6 +10,7 @@ import com.zipcodewilmington.froilansfarm.FarmStructures.Stable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.People.Farmer;
 import com.zipcodewilmington.froilansfarm.People.Pilot;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,6 +28,16 @@ public class DailyTests {
         farm = MainApplication.getFarm();
         froilanda = (Pilot) farm.getFarmHouse().getInhabitants().get(1);
         froilan = MainApplication.getFroilan();
+    }
+
+    @After
+    public void tearDown(){
+        for(Stable stable : farm.getStables()){
+            for(Horse horse : stable.getInhabitants()){
+                horse.getFoodEaten().clear();
+                horse.setMounted(false);
+            }
+        }
     }
 
     @Test

@@ -18,7 +18,7 @@ public class TomatoPlant extends Crop {
 
     @Override
     public Tomato yield(){
-        return  null;
+        return  new Tomato();
     }
 
     @Override

@@ -13,6 +13,7 @@ public class Farm {
     private List<Stable> stables;
     private Field field;
     private List<FarmVehicle> farmVehicles;
+    private Silo silo;
 
 
     public Farm() {
@@ -21,6 +22,7 @@ public class Farm {
         chickenCoops = new ArrayList<>();
         stables = new ArrayList<>();
         farmVehicles = new ArrayList<>();
+        silo = new Silo();
 
     }
 
@@ -64,5 +66,11 @@ public class Farm {
         this.farmVehicles = farmVehicles;
     }
 
+    public Silo getSilo() {
+        return silo;
+    }
 
+    public void setSilo(Silo silo) {
+        this.silo = silo;
+    }
 }
