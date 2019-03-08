@@ -7,6 +7,7 @@ import com.zipcodewilmington.froilansfarm.Crops.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
 import com.zipcodewilmington.froilansfarm.People.Farmer;
 import com.zipcodewilmington.froilansfarm.People.Pilot;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,6 +24,15 @@ public class SundayTest {
         farm = MainApplication.getFarm();
         froilanda = (Pilot) farm.getFarmHouse().getInhabitants().get(1);
         froilan = MainApplication.getFroilan();
+    }
+
+    @After
+    public void tearDown(){
+        for(CropRow cropRow : farm.getField().getCropRows()){
+            cropRow.getCrops().clear();
+        }
+
+        farm.getSilo().getEdibles().clear();
     }
 
     @Test
