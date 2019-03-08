@@ -18,6 +18,8 @@ public class MainApplication {
 
 
     private static Person person = new BasicPerson();
+
+
     private static Farmer froilan = new Farmer(person, new Farm());
 
     private static Person person2 = new BasicPerson();
@@ -49,11 +51,13 @@ public class MainApplication {
         CropRow cropRow3 = field.getCropRows().get(2);
         froilan.plant(new CornStalk(), cropRow3);
 
+
         CropRow cropRow4 = field.getCropRows().get(3);
         froilan.plant(new TomatoPlant(), cropRow4);
 
         CropRow cropRow5 = field.getCropRows().get(4);
         froilan.plant(new TomatoPlant(), cropRow5);
+
 
 
         // Adds 4 ChickenCoops to the Farm
