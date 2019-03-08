@@ -38,34 +38,17 @@ public class SaturdayTests {
     @Before
     public void setUp() {
 
-        MainApplication.setUp();
-        farm = MainApplication.getFarm();
-        froilanda = (Pilot) farm.getFarmHouse().getInhabitants().get(1);
-        froilan = MainApplication.getFroilan();
-        tractor = (Tractor) farm.getFarmVehicles().get(0);
-        field = farm.getField();
-        silo = farm.getSilo();
         farmStand= new FarmStand();
 
         ediblesSold = new ArrayList<>();
         basket= new ArrayList<>();
-
-
-
-    }
-
-    @After
-    public void tearDown() {
-        for (CropRow cropRow : field.getCropRows()) {
-            cropRow.getCrops().clear();
-        }
-
-        silo.getEdibles().clear();
     }
 
 
     @Test
     public void sellSaturdayMarketTest() {
+        ediblesSold = new ArrayList<>();
+        basket= new ArrayList<>();
 
         for (int i=0;i<4;i++) {
             basket.add(new Tomato());
