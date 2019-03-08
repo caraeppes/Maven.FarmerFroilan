@@ -2,26 +2,17 @@ package com.zipcodewilmington.froilansfarm;
 
 import com.zipcodewilmington.froilansfarm.Animals.Horse;
 import com.zipcodewilmington.froilansfarm.Crops.CropRow;
-import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
-import com.zipcodewilmington.froilansfarm.Edibles.EdibleEgg;
-import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
 
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
-import com.zipcodewilmington.froilansfarm.FarmStructures.Stable;
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.People.Farmer;
 import com.zipcodewilmington.froilansfarm.People.Pilot;
 import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
-import com.zipcodewilmington.froilansfarm.People.Pilot;
 import com.zipcodewilmington.froilansfarm.Vehicles.FarmVehicle;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class MondayTests {

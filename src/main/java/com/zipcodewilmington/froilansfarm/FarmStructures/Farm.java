@@ -14,6 +14,8 @@ public class Farm {
     private Field field;
     private List<FarmVehicle> farmVehicles;
     private Silo silo;
+    private List<GoatStable> goatStables;
+    private List<CowBarn> cowBarns;
 
 
     public Farm() {
@@ -23,6 +25,8 @@ public class Farm {
         stables = new ArrayList<>();
         farmVehicles = new ArrayList<>();
         silo = new Silo();
+        goatStables = new ArrayList<>();
+        cowBarns = new ArrayList<>();
 
     }
 
@@ -72,5 +76,21 @@ public class Farm {
 
     public void setSilo(Silo silo) {
         this.silo = silo;
+    }
+
+    public List<GoatStable> getGoatStables() {
+        return goatStables;
+    }
+
+    public void setGoatStables(List<GoatStable> goatStables) {
+        this.goatStables = goatStables;
+    }
+
+    public List<CowBarn> getCowBarns() {
+        return cowBarns;
+    }
+
+    public void setCowBarns(List<CowBarn> cowBarns) {
+        this.cowBarns = cowBarns;
     }
 }

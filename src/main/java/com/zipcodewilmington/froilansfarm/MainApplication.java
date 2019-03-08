@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
 import com.zipcodewilmington.froilansfarm.Animals.Chicken;
+import com.zipcodewilmington.froilansfarm.Animals.Cow;
+import com.zipcodewilmington.froilansfarm.Animals.Goat;
 import com.zipcodewilmington.froilansfarm.Animals.Horse;
 import com.zipcodewilmington.froilansfarm.Crops.CornStalk;
 import com.zipcodewilmington.froilansfarm.Crops.CropRow;
@@ -12,6 +14,7 @@ import com.zipcodewilmington.froilansfarm.People.Farmer;
 import com.zipcodewilmington.froilansfarm.People.Pilot;
 import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
+
 import java.util.List;
 
 public class MainApplication {
@@ -59,7 +62,6 @@ public class MainApplication {
         froilan.plant(new TomatoPlant(), cropRow5);
 
 
-
         // Adds 4 ChickenCoops to the Farm
         for (int i = 0; i < 4; i++) {
             farm.getChickenCoops().add(new ChickenCoop());
@@ -76,7 +78,7 @@ public class MainApplication {
         chickenCoop3.addAll(chickens.subList(7, 11));
         chickenCoop4.addAll(chickens.subList(11, 15));
 
-        for(int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             farm.getStables().add(new Stable());
         }
 
@@ -88,6 +90,33 @@ public class MainApplication {
         stable1.addAll(horses.subList(0, 3));
         stable2.addAll(horses.subList(3, 6));
         stable3.addAll(horses.subList(6, 10));
+
+        // Adds 3 GoatStables to farm
+        for (int i = 0; i < 3; i++) {
+            farm.getGoatStables().add(new GoatStable());
+        }
+
+        GoatStable goatStable1 = farm.getGoatStables().get(0);
+        GoatStable goatStable2 = farm.getGoatStables().get(1);
+        GoatStable goatStable3 = farm.getGoatStables().get(2);
+
+        // Creates 9 goats and adds 3 to each GoatStable
+        List<Goat> goats = Goat.makeGoats(9);
+        goatStable1.addAll(goats.subList(0, 3));
+        goatStable2.addAll(goats.subList(3, 6));
+        goatStable3.addAll(goats.subList(6, 9));
+
+        // Adds 2 CowBarns to farm
+        farm.getCowBarns().add(new CowBarn());
+        farm.getCowBarns().add(new CowBarn());
+
+        CowBarn cowBarn1 = farm.getCowBarns().get(0);
+        CowBarn cowBarn2 = farm.getCowBarns().get(1);
+
+        // Creates 20 Cows and adds 10 to each CowBarn
+        List<Cow> cows = Cow.makeCows(20);
+        cowBarn1.addAll(cows.subList(0,10));
+        cowBarn2.addAll(cows.subList(10, 20));
 
         Tractor tractor = new Tractor();
         CropDuster cropDuster = new CropDuster();
@@ -104,7 +133,7 @@ public class MainApplication {
         return froilan;
     }
 
-    public static Pilot getFroilanda(){
+    public static Pilot getFroilanda() {
         return froilanda;
     }
 
@@ -125,3 +154,4 @@ public class MainApplication {
         return farm;
     }
 }
+
