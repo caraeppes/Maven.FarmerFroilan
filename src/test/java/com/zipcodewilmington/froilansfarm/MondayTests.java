@@ -26,10 +26,10 @@ public class MondayTests {
 
     @Before
     public void setUp() {
-        MainApplication.setUp();
-        farm = MainApplication.getFarm();
-        froilanda = (Pilot) farm.getFarmHouse().getInhabitants().get(1);
-        froilan = MainApplication.getFroilan();
+        MainApplication main = new MainApplication();
+        farm = main.getFroilansFarm().getFarm();
+        froilanda = main.getFroilansFarm().getFroilanda();
+        froilan = main.getFroilansFarm().getFroilan();
         cropduster = new CropDuster();
         croprow = new CropRow();
 

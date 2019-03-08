@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
+import com.zipcodewilmington.froilansfarm.FarmStructures.Silo;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 public class Goat extends MilkableAnimals {
 
     @Override
-    public void milk() {
+    public void milk(Silo silo) {
 
     }
 
@@ -23,5 +24,9 @@ public class Goat extends MilkableAnimals {
             goats.add(new Goat());
         }
         return goats;
+    }
+
+    public String makeNoise(){
+        return "Meeehhhh!";
     }
 }

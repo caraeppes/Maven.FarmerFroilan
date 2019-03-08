@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.Crops.Crop;
-import com.zipcodewilmington.froilansfarm.Crops.CropRow;
+import com.zipcodewilmington.froilansfarm.Crops.*;
+import com.zipcodewilmington.froilansfarm.Edibles.Carrot;
 import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
 import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
@@ -18,44 +18,16 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class TuesdayTests {
 
 
-    Farm farm;
-    Pilot froilanda;
-    Farmer froilan;
-    Tractor tractor;
-    Silo silo;
-    Field field;
-
-    @Before
-    public void setUp() {
-
-        MainApplication.setUp();
-        farm = MainApplication.getFarm();
-        froilanda = (Pilot) farm.getFarmHouse().getInhabitants().get(1);
-        froilan = MainApplication.getFroilan();
-        tractor = (Tractor) farm.getFarmVehicles().get(0);
-        field = farm.getField();
-        silo = farm.getSilo();
-
-    }
-
-    @After
-    public void tearDown(){
-        for(CropRow cropRow : field.getCropRows()){
-            cropRow.getCrops().clear();
-        }
-
-        silo.getEdibles().clear();
-    }
-
-
-
    @Test
     public void harvestCropsThatHaveBeenFertilizedTest(){
+       FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+       Field field = froilansFarm.getField();
+       Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
+       Silo silo = froilansFarm.getFarm().getSilo();
         // Given
         for (CropRow cropRow : field.getCropRows()){
             for(Crop crop : cropRow.getCrops()){
@@ -81,8 +53,12 @@ public class TuesdayTests {
 
     @Test
     public void harvestCropsThatHaveNotBeenFertilized(){
+        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+        Field field = froilansFarm.getField();
+        Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
+        Silo silo = froilansFarm.getFarm().getSilo();
+
         // Given
-        Field field = farm.getField();
         for (CropRow cropRow : field.getCropRows()){
             for(Crop crop : cropRow.getCrops()){
                 crop.setHasBeenFertilized(false);
@@ -106,7 +82,40 @@ public class TuesdayTests {
     }
 
     @Test
+    public void harvestCropsThatHaveAlreadyBeenHarvestedTest() {
+        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+        Field field = froilansFarm.getField();
+        Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
+        Silo silo = froilansFarm.getFarm().getSilo();
+
+        // Given
+        for (CropRow cropRow : field.getCropRows()) {
+            for (Crop crop : cropRow.getCrops()) {
+                crop.setHasBeenFertilized(true);
+                crop.setHasBeenHarvested(true);
+            }
+        }
+        int expected = 0;
+
+        // When
+        for (CropRow cropRow : field.getCropRows()) {
+            for (Crop crop : cropRow.getCrops()) {
+                tractor.harvest(crop, silo);
+            }
+        }
+        int actual = silo.getEdibles().size();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void harvestCropsSiloTest() {
+        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+        Field field = froilansFarm.getField();
+        Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
+        Silo silo = froilansFarm.getFarm().getSilo();
+
         // Given
         for (CropRow cropRow : field.getCropRows()) {
             for (Crop crop : cropRow.getCrops()) {
@@ -119,7 +128,7 @@ public class TuesdayTests {
         expected.add(new EarCorn());
         expected.add(new Tomato());
         expected.add(new EarCorn());
-        expected.add(new Tomato());
+        expected.add(new Carrot());
         expected.add(new Tomato());
 
         List<Edible> actual;

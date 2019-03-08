@@ -35,8 +35,7 @@ public class Chicken extends Produce implements Animal {
 
     @Override
     public String makeNoise() {
-
-        return null;
+        return "Cluck-cluck-cluck!";
     }
 
     public static  List<Chicken> makeChickens(int numberOfChickens){
