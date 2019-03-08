@@ -49,11 +49,13 @@ public class MainApplication {
         CropRow cropRow3 = field.getCropRows().get(2);
         froilan.plant(new CornStalk(), cropRow3);
 
+
         CropRow cropRow4 = field.getCropRows().get(3);
         froilan.plant(new TomatoPlant(), cropRow4);
 
         CropRow cropRow5 = field.getCropRows().get(4);
         froilan.plant(new TomatoPlant(), cropRow5);
+
 
 
         // Adds 4 ChickenCoops to the Farm
