@@ -31,6 +31,7 @@ public class MainApplication {
     private static Farm farm = froilan.getFarm();
     private static Field field = farm.getField();
     private static FarmHouse farmHouse = farm.getFarmHouse();
+    private static FarmStand farmStand = new FarmStand();
 
     public static void setUp() {
 
@@ -151,7 +152,13 @@ public class MainApplication {
     }
 
     public static Farm getFarm() {
-        return farm;
+    return farm;
+}
+
+    public static FarmStand getFarmStand() {
+
+        return farmStand;
     }
 }
+
 

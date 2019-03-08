@@ -14,13 +14,36 @@ public class FarmStand {
     List<EarCorn> basketOfCorn = new ArrayList<>();
     List<EdibleEgg> basketOfEggs = new ArrayList<>();
 
-    double moneyJar = 0;
+
+  public  double moneyJar = 0;
 
     public FarmStand(){}
 
     public void sell(List<Edible> ediblesSold, List<Edible> basket){
-        basket.removeAll(ediblesSold);
+
+
+       basket.removeAll(ediblesSold);
+
+
+       System.out.println(basket);
+
+
         moneyJar += (ediblesSold.size() * 1);
     }
 
+
+
+    public boolean equals(Object o) {
+        return o instanceof Edible && ((Edible)o).toString().equals(toString());
+    }
+
+    public int hashCode() {
+        return toString().hashCode();
+    }
+
+
+
+
 }
+
+
