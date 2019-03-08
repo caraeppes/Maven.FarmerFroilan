@@ -18,6 +18,8 @@ public class MainApplication {
 
 
     private static Person person = new BasicPerson();
+
+
     private static Farmer froilan = new Farmer(person, new Farm());
 
     private static Person person2 = new BasicPerson();

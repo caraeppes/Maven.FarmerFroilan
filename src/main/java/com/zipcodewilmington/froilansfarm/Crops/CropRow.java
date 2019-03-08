@@ -3,7 +3,16 @@ package com.zipcodewilmington.froilansfarm.Crops;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CropRow {
+public class CropRow   {
+    public boolean isHasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    public void setHasBeenFertilized(boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
+
+    private boolean hasBeenFertilized;
 
     private List<Crop> crops;
 
@@ -26,4 +35,11 @@ public class CropRow {
     public void setCrops(List<Crop> crops) {
         this.crops = crops;
     }
+
+
+
+
+
 }
+
+
