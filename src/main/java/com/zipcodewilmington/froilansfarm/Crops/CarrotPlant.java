@@ -19,7 +19,7 @@ public class CarrotPlant extends Crop {
 
     @Override
     public Carrot yield() {
-        return null;
+        return new Carrot();
     }
 
     public boolean isHasBeenFertilized() {

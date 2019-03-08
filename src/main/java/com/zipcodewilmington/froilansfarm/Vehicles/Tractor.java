@@ -2,14 +2,26 @@ package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
+import com.zipcodewilmington.froilansfarm.FarmStructures.Silo;
 
 public class Tractor extends FarmVehicle {
 
     private boolean isMounted = false;
 
-    public Edible harvest(Crop crop){
-        return null;
+    public void harvest(Crop crop, Silo silo) {
+
+        if (crop.isHasBeenFertilized() && !crop.isHasBeenHarvested()) {
+            crop.setHasBeenHarvested(true);
+            silo.add(crop.yield());
+        }
+        else {
+            if(!crop.isHasBeenFertilized()){
+                System.out.println("Cannot harvest a crop that has not been fertilized.");
+            }
+            if(crop.isHasBeenHarvested()){
+                System.out.println("Cannot harvest a crop that has already been harvested.");
+            }
+        }
     }
 
     @Override
