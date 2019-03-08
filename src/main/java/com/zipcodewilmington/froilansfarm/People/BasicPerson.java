@@ -10,6 +10,7 @@ import java.util.List;
 public class BasicPerson implements Person {
 
     List<Edible> foodEaten;
+    double wallet = 100.00;
 
     public BasicPerson() {
         this.foodEaten = new ArrayList<>();
