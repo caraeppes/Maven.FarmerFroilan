@@ -34,6 +34,8 @@ public class CropDuster extends FarmVehicle implements Aircraft, Rideable {
 
               cropRow.setHasBeenFertilized(true);
 
+              setMounted(false);
+
             }
 
         }
@@ -41,6 +43,14 @@ public class CropDuster extends FarmVehicle implements Aircraft, Rideable {
 
     @Override
     public void fly() {
+
+
+
+
+        setMounted(true);
+
+
+
 
     }
 

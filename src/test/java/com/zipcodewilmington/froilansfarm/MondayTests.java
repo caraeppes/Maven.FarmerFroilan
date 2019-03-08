@@ -46,7 +46,7 @@ public class MondayTests {
 
 
     @Test
-    public void froilandaflycropdusterTest() {
+    public void froilandamountcropdusterTest() {
 
 
         // Given
@@ -59,6 +59,24 @@ public class MondayTests {
 
         Assert.assertTrue(((Rideable) froilanda.getAircraft()).isMounted());
     }
+
+    @Test
+    public void froilandaflycropdusterTest() {
+
+
+        // Given
+
+        froilanda.setAircraft(cropduster);
+        // When
+
+        froilanda.mount((Rideable)froilanda.getAircraft());
+
+        cropduster.fly();
+
+        //Then
+        Assert.assertEquals( true, cropduster.isMounted());
+    }
+
 
     @Test
     public void froilandafirtilizefieldrTest() {
@@ -100,6 +118,29 @@ public class MondayTests {
         //Then
         Assert.assertEquals(expected, croprow.isHasBeenFertilized());
     }
+
+
+
+    @Test
+    public void FieldhasbeenfertilizedUnmount() {
+
+
+        // Given
+
+        froilanda.setAircraft(cropduster);
+        froilanda.mount((Rideable) froilanda.getAircraft());
+
+        cropduster.fertilize(croprow);
+        Boolean expected = false;
+
+        // When
+        for (int i = 0; i < 3; i++) {
+            cropduster.fertilize(croprow);
+        }
+        //Then
+        Assert.assertEquals(expected, cropduster.isMounted());
+    }
+
 
 
 }
