@@ -50,7 +50,7 @@ public class Farmer extends PersonDecorator implements Rider, Botanist, Person {
 
     @Override
     public String makeNoise() {
-        return null;
+        return "Howdy! I'm a Farmer!";
     }
 
     public Farm getFarm() {

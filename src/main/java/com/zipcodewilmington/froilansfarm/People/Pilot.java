@@ -40,7 +40,7 @@ public class Pilot extends PersonDecorator implements Rider, Person {
 
     @Override
     public String makeNoise() {
-        return null;
+        return "Hi!  I'm a pilot!";
     }
 
     public Aircraft getAircraft() {

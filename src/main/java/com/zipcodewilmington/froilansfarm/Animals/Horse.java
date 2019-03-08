@@ -25,7 +25,7 @@ public class Horse implements Rideable, Animal {
     @Override
     public String makeNoise() {
 
-        return null;
+        return "Neigh!";
     }
 
     public static List<Horse> makeHorses(int numberOfHorses){
@@ -44,4 +44,6 @@ public class Horse implements Rideable, Animal {
     public void setMounted(boolean mounted) {
         isMounted = mounted;
     }
+
+
 }

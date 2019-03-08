@@ -14,30 +14,14 @@ import org.junit.Test;
 
 public class SundayTest {
 
-    Farm farm;
-    Pilot froilanda;
-    Farmer froilan;
-
-    @Before
-    public void setUp() {
-        MainApplication.setUp();
-        farm = MainApplication.getFarm();
-        froilanda = (Pilot) farm.getFarmHouse().getInhabitants().get(1);
-        froilan = MainApplication.getFroilan();
-    }
-
-    @After
-    public void tearDown(){
-        for(CropRow cropRow : farm.getField().getCropRows()){
-            cropRow.getCrops().clear();
-        }
-
-        farm.getSilo().getEdibles().clear();
-    }
 
     @Test
     public void sundayFroilanCropTest() {
         // Given
+        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+        Farm farm = froilansFarm.getFarm();
+        Farmer froilan = froilansFarm.getFroilan();
+
 
         CornStalk expectedCornPlant = new CornStalk();
         TomatoPlant expectedTomatoePlant = new TomatoPlant();
