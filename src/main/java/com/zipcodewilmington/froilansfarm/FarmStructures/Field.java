@@ -30,5 +30,16 @@ public class Field {
 
     }
 
+    public void remove(CropRow cropRow){
+        cropRows.remove(cropRow);
+
+    }
+    public void cleanField(){
+        cropRows.clear();
+
+    }
+
+
+
 
 }

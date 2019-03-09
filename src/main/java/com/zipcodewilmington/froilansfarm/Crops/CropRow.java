@@ -36,6 +36,14 @@ public class CropRow   {
         this.crops = crops;
     }
 
+    public void removeCrops(Crop crop){
+
+        crops.remove(crop);
+    }
+    public void removeCroprow(List<Crop> crops){
+
+        crops.clear();
+    }
 
 
 
