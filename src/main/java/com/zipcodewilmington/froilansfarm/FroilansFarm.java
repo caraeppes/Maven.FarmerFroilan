@@ -115,10 +115,10 @@ public class FroilansFarm {
 
     private void addChickens() {
         List<Chicken> chickens = Chicken.makeChickens(15);
-        farm.getChickenCoops().get(0).addAll(chickens.subList(0, 3));
-        farm.getChickenCoops().get(1).addAll(chickens.subList(3, 7));
-        farm.getChickenCoops().get(2).addAll(chickens.subList(7, 11));
-        farm.getChickenCoops().get(3).addAll(chickens.subList(11, 15));
+        farm.getChickenCoops().get(0).addChickens(chickens.subList(0, 3));
+        farm.getChickenCoops().get(1).addChickens(chickens.subList(3, 7));
+        farm.getChickenCoops().get(2).addChickens(chickens.subList(7, 11));
+        farm.getChickenCoops().get(3).addChickens(chickens.subList(11, 15));
     }
 
     private void horseStableSetUp() {
@@ -134,9 +134,9 @@ public class FroilansFarm {
 
     private void addHorses() {
         List<Horse> horses = Horse.makeHorses(10);
-        farm.getStables().get(0).addAll(horses.subList(0, 3));
-        farm.getStables().get(1).addAll(horses.subList(3, 6));
-        farm.getStables().get(2).addAll(horses.subList(6, 10));
+        farm.getStables().get(0).addHorses(horses.subList(0, 3));
+        farm.getStables().get(1).addHorses(horses.subList(3, 6));
+        farm.getStables().get(2).addHorses(horses.subList(6, 10));
     }
 
     private void cowBarnSetUp() {
@@ -151,8 +151,8 @@ public class FroilansFarm {
 
     private void addCows() {
         List<Cow> cows = Cow.makeCows(20);
-        farm.getCowBarns().get(0).addAll(cows.subList(0, 10));
-        farm.getCowBarns().get(1).addAll(cows.subList(10, 20));
+        farm.getCowBarns().get(0).addCows(cows.subList(0, 10));
+        farm.getCowBarns().get(1).addCows(cows.subList(10, 20));
     }
 
     private void goatStableSetUp() {
@@ -168,41 +168,27 @@ public class FroilansFarm {
 
     private void addGoats() {
         List<Goat> goats = Goat.makeGoats(9);
-        farm.getGoatStables().get(0).addAll(goats.subList(0, 3));
-        farm.getGoatStables().get(1).addAll(goats.subList(3, 6));
-        farm.getGoatStables().get(2).addAll(goats.subList(6, 9));
+        farm.getGoatStables().get(0).addGoats(goats.subList(0, 3));
+        farm.getGoatStables().get(1).addGoats(goats.subList(3, 6));
+        farm.getGoatStables().get(2).addGoats(goats.subList(6, 9));
     }
 
     public Farm getFarm() {
         return farm;
     }
 
-    public void setFarm(Farm farm) {
-        this.farm = farm;
-    }
-
     public Farmer getFroilan() {
         return froilan;
     }
 
-    public void setFroilan(Farmer froilan) {
-        this.froilan = froilan;
-    }
 
     public Pilot getFroilanda() {
         return froilanda;
-    }
-
-    public void setFroilanda(Pilot froilanda) {
-        this.froilanda = froilanda;
     }
 
     public Field getField() {
         return field;
     }
 
-    public void setField(Field field) {
-        this.field = field;
-    }
 }
 

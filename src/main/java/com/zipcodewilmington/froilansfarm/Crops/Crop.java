@@ -10,14 +10,10 @@ public abstract class Crop extends Produce {
     private boolean hasBeenFertilized;
 
 
-
-
-    public Crop(boolean hasBeenHarvested, boolean hasBeenFertilized){
-        super(hasBeenFertilized);
+    public Crop(boolean hasBeenHarvested){
+        super();
         this.hasBeenHarvested = hasBeenHarvested;
     }
-
-
 
 
     public abstract Edible yield();

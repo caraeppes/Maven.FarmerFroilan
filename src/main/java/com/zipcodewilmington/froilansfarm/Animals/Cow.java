@@ -2,12 +2,11 @@ package com.zipcodewilmington.froilansfarm.Animals;
 
 import com.zipcodewilmington.froilansfarm.Edibles.Milk;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Silo;
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cow extends MilkableAnimals {
+public class Cow extends MilkableAnimal {
     @Override
     public void milk(Silo silo) {
         silo.getEdibles().add(yield());
@@ -15,11 +14,6 @@ public class Cow extends MilkableAnimals {
 
     public Milk yield(){
         return new Milk();
-    }
-
-    @Override
-    public List<Edible> getFoodEaten() {
-        return null;
     }
 
 

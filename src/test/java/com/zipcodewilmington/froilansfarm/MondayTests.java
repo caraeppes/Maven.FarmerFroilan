@@ -83,13 +83,13 @@ public class MondayTests {
         // Given
         froilanda.setAircraft(cropduster);
 
-        froilanda.mount((Rideable) froilanda.getAircraft());
+        froilanda.mount(froilanda.getAircraft());
 
-        cropduster.fertilize(croprow);
         int expected = 4;
 
         // When
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
+            cropduster.setMounted(true);
             cropduster.fertilize(croprow);
         }
         int actual = cropduster.getCroprowlist().size();

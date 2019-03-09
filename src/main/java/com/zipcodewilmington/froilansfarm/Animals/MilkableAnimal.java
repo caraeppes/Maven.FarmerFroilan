@@ -4,16 +4,22 @@ import com.zipcodewilmington.froilansfarm.FarmStructures.Silo;
 import com.zipcodewilmington.froilansfarm.Interfaces.Animal;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
-public abstract class MilkableAnimals implements Animal {
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class MilkableAnimal implements Animal {
+
+    List<Edible> foodEaten = new ArrayList<>();
+
     @Override
     public void eat(Edible e) {
-
+        foodEaten.add(e);
     }
 
-    @Override
-    public String makeNoise() {
-        return null;
+    public List<Edible> getFoodEaten(){
+        return foodEaten;
     }
+
 
     public abstract void milk(Silo silo);
 }

@@ -42,24 +42,12 @@ public class Farm {
         return chickenCoops;
     }
 
-    public void setChickenCoops(List<ChickenCoop> chickenCoops) {
-        this.chickenCoops = chickenCoops;
-    }
-
     public List<Stable> getStables() {
         return stables;
     }
 
-    public void setStables(List<Stable> stables) {
-        this.stables = stables;
-    }
-
     public Field getField() {
         return field;
-    }
-
-    public void setField(Field field) {
-        this.field = field;
     }
 
     public List<FarmVehicle> getFarmVehicles() {
@@ -74,23 +62,11 @@ public class Farm {
         return silo;
     }
 
-    public void setSilo(Silo silo) {
-        this.silo = silo;
-    }
-
     public List<GoatStable> getGoatStables() {
         return goatStables;
     }
 
-    public void setGoatStables(List<GoatStable> goatStables) {
-        this.goatStables = goatStables;
-    }
-
     public List<CowBarn> getCowBarns() {
         return cowBarns;
-    }
-
-    public void setCowBarns(List<CowBarn> cowBarns) {
-        this.cowBarns = cowBarns;
     }
 }

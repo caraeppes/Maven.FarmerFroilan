@@ -1,17 +1,11 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.Animals.Chicken;
-import com.zipcodewilmington.froilansfarm.Animals.Cow;
-import com.zipcodewilmington.froilansfarm.Animals.Goat;
-import com.zipcodewilmington.froilansfarm.Animals.Horse;
-import com.zipcodewilmington.froilansfarm.Crops.CropRow;
+import com.zipcodewilmington.froilansfarm.Animals.*;
+import com.zipcodewilmington.froilansfarm.Edibles.Milk;
 import com.zipcodewilmington.froilansfarm.FarmStructures.*;
 import com.zipcodewilmington.froilansfarm.People.Farmer;
 import com.zipcodewilmington.froilansfarm.People.Pilot;
-import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class ThursdayTests {
@@ -115,5 +109,31 @@ public class ThursdayTests {
                 Assert.assertEquals(expected, actual);
             }
         }
+    }
+
+    @Test
+    public void froilanBasicPersonMakeNoiseTest(){
+        // Given
+        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+        String expected = "I'm a person.";
+
+        // When
+        String actual = froilansFarm.getFroilan().decoratedPerson.makeNoise();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void froilandaBasicPersonMakeNoiseTest(){
+        // Given
+        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+        String expected = "I'm a person.";
+
+        // When
+        String actual = froilansFarm.getFroilanda().decoratedPerson.makeNoise();
+
+        // Then
+        Assert.assertEquals(expected, actual);
     }
 }

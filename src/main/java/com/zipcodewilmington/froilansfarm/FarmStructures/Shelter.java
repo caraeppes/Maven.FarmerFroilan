@@ -11,10 +11,6 @@ public abstract class Shelter<T> {
         inhabitants = new ArrayList<>();
     }
 
-    public Shelter(List<T> inhabitants) {
-        this.inhabitants = inhabitants;
-    }
-
     public void add(T inhabitant){
         inhabitants.add(inhabitant);
     }
@@ -25,9 +21,5 @@ public abstract class Shelter<T> {
 
     public List<T> getInhabitants() {
         return inhabitants;
-    }
-
-    public void setInhabitants(List<T> inhabitants) {
-        this.inhabitants = inhabitants;
     }
 }

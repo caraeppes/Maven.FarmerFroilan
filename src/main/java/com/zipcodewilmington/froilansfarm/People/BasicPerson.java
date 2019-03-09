@@ -10,7 +10,6 @@ import java.util.List;
 public class BasicPerson implements Person {
 
     List<Edible> foodEaten;
-    double wallet = 100.00;
 
     public BasicPerson() {
         this.foodEaten = new ArrayList<>();
@@ -28,7 +27,7 @@ public class BasicPerson implements Person {
 
     @Override
     public String makeNoise() {
-        return null;
+        return "I'm a person.";
     }
 
     @Override
@@ -36,7 +35,4 @@ public class BasicPerson implements Person {
         eater.eat(edible);
     }
 
-    public void setFoodEaten(List<Edible> foodEaten) {
-        this.foodEaten = foodEaten;
-    }
 }

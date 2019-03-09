@@ -11,11 +11,6 @@ public class GoatStable extends Shelter<Goat> {
         super();
     }
 
-    public GoatStable(List inhabitants) {
-        super(inhabitants);
-    }
-
-
     public void addGoats(List<Goat> goats){
         addAll(goats);
     }

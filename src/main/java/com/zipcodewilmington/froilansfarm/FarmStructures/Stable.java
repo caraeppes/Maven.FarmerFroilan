@@ -13,11 +13,6 @@ public class Stable extends Shelter {
         super();
     }
 
-    public Stable(List inhabitants) {
-        super(inhabitants);
-    }
-
-
     public void addHorses(List<Horse> horses){
         addAll(horses);
     }

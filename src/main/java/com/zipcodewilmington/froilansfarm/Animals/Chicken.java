@@ -10,27 +10,27 @@ import java.util.List;
 
 public class Chicken extends Produce implements Animal {
 
-    public Chicken(boolean hasBeenFertilized) {
-        super(hasBeenFertilized);
-    }
+    List<Edible> foodEaten = new ArrayList<>();
 
     public Chicken() {
-        super(false);
+        super();
     }
 
     public Edible yield() {
+        if(!getHasBeenFertilized()){
+            return new EdibleEgg();
+        }
         return null;
     }
 
-
     @Override
     public void eat(Edible e) {
-
+        foodEaten.add(e);
     }
 
     @Override
     public List<Edible> getFoodEaten() {
-        return null;
+        return foodEaten;
     }
 
     @Override

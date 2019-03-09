@@ -61,8 +61,4 @@ public class Farmer extends PersonDecorator implements Rider, Botanist, Person {
     public void feed(Eater eater, Edible edible) {
         decoratedPerson.feed(eater, edible);
     }
-
-    public void setFarm(Farm farm) {
-        this.farm = farm;
-    }
 }

@@ -1,12 +1,11 @@
 package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Crops.Crop;
+import com.zipcodewilmington.froilansfarm.Crops.CropRow;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Silo;
 
 public class Tractor extends FarmVehicle {
-
-    private boolean isMounted = false;
 
     public void harvest(Crop crop, Silo silo) {
 
@@ -26,24 +25,18 @@ public class Tractor extends FarmVehicle {
 
     @Override
     public void operate(Farm farm) {
-
+        if (isMounted()){
+            makeNoise();
+            for(CropRow cropRow : farm.getField().getCropRows()){
+                for(Crop crop : cropRow.getCrops()){
+                    harvest(crop, farm.getSilo());
+                }
+            }
+        }
     }
 
     @Override
     public String makeNoise() {
-
-        return null;
+        return "Chug-chug-chug!";
     }
-
-    @Override
-    public boolean isMounted() {
-        return isMounted;
-    }
-
-    @Override
-    public void setMounted(boolean isMounted) {
-        this.isMounted = isMounted;
-    }
-
-
 }

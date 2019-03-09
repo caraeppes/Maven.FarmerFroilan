@@ -1,21 +1,15 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
 import com.zipcodewilmington.froilansfarm.FarmStructures.Silo;
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Goat extends MilkableAnimals {
+public class Goat extends MilkableAnimal {
 
     @Override
     public void milk(Silo silo) {
 
-    }
-
-    @Override
-    public List<Edible> getFoodEaten() {
-        return null;
     }
 
     public static List<Goat> makeGoats(int numberOfGoats){

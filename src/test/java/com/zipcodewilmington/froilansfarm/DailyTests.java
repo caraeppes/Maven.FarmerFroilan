@@ -1,7 +1,11 @@
 package com.zipcodewilmington.froilansfarm;
 
 
+import com.zipcodewilmington.froilansfarm.Animals.Chicken;
+import com.zipcodewilmington.froilansfarm.Animals.Cow;
+import com.zipcodewilmington.froilansfarm.Animals.Goat;
 import com.zipcodewilmington.froilansfarm.Animals.Horse;
+import com.zipcodewilmington.froilansfarm.Edibles.Carrot;
 import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
 import com.zipcodewilmington.froilansfarm.Edibles.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
@@ -164,4 +168,103 @@ public class DailyTests {
         }
     }
 
+    @Test
+    public void froilanFeedGoatsTest() {
+        // Given
+        Goat goat = farm.getGoatStables().get(0).getInhabitants().get(0);
+        int expected = 5;
+
+        // When
+        for (int i = 0; i < 5; i++) {
+            froilan.feed(goat, new Carrot());
+        }
+        int actual = goat.getFoodEaten().size();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void froilandaFeedGoatsTest() {
+        // Given
+        Goat goat = farm.getGoatStables().get(0).getInhabitants().get(1);
+        int expected = 5;
+
+        // When
+        for (int i = 0; i < 5; i++) {
+            froilanda.feed(goat, new Carrot());
+        }
+        int actual = goat.getFoodEaten().size();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void froilanFeedCowsTest() {
+        // Given
+        Cow cow = farm.getCowBarns().get(0).getInhabitants().get(5);
+        int expected = 7;
+
+        // When
+        for (int i = 0; i < 7; i++) {
+            froilan.feed(cow, new Tomato());
+        }
+        int actual = cow.getFoodEaten().size();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void froilandaFeedCowsTest() {
+        // Given
+        Cow cow = farm.getCowBarns().get(1).getInhabitants().get(3);
+        int expected = 7;
+
+        // When
+        for (int i = 0; i < 7; i++) {
+            froilanda.feed(cow, new Tomato());
+        }
+        int actual = cow.getFoodEaten().size();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void froilanFeedChickensTest() {
+        // Given
+        Chicken chicken = farm.getChickenCoops().get(0).getInhabitants().get(2);
+        int expected = 2;
+
+        // When
+        for (int i = 0; i < 2; i++) {
+            froilan.feed(chicken, new EarCorn());
+        }
+        int actual = chicken.getFoodEaten().size();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+
+
+    @Test
+    public void froilandaFeedChickensTest() {
+        // Given
+        Chicken chicken = farm.getChickenCoops().get(1).getInhabitants().get(2);
+        int expected = 2;
+
+        // When
+        for (int i = 0; i < 2; i++) {
+            froilanda.feed(chicken, new EarCorn());
+        }
+        int actual = chicken.getFoodEaten().size();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
 }

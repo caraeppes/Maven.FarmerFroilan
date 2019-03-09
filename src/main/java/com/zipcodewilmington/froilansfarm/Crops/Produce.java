@@ -7,8 +7,12 @@ public abstract class Produce {
 
     private boolean hasBeenFertilized;
 
-    public Produce(boolean hasBeenFertilized){
-        this.hasBeenFertilized = hasBeenFertilized;
+    public Produce(){
+        hasBeenFertilized = false;
+    }
+
+    public boolean getHasBeenFertilized() {
+        return hasBeenFertilized;
     }
 
     public abstract Edible yield();
