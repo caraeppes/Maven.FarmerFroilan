@@ -17,6 +17,4 @@ public class Silo extends Shelter<Edible> {
         }
         return edibles;
     }
-
-
 }

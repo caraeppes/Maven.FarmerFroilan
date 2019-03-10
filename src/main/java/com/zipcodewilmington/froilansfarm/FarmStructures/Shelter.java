@@ -22,4 +22,8 @@ public abstract class Shelter<T> {
     public List<T> getInhabitants() {
         return inhabitants;
     }
+
+    public void removeInhabitant(T inhabitant){
+        inhabitants.remove(inhabitant);
+    }
 }

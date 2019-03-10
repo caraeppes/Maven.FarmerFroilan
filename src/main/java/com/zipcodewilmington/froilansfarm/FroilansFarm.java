@@ -34,7 +34,6 @@ public class FroilansFarm {
         farmSetUp();
         fieldSetUp();
         setUpStructures();
-
     }
 
     public FroilansFarm testFroilansFarm(){
@@ -172,6 +171,7 @@ public class FroilansFarm {
         farm.getGoatStables().get(1).addGoats(goats.subList(3, 6));
         farm.getGoatStables().get(2).addGoats(goats.subList(6, 9));
     }
+
 
     public Farm getFarm() {
         return farm;

@@ -20,10 +20,6 @@ public class CropRow   {
         crops = new ArrayList<>();
     }
 
-    public CropRow(List<Crop> crops) {
-        this.crops = crops;
-    }
-
     public List<Crop> getCrops() {
         return crops;
     }
@@ -44,8 +40,6 @@ public class CropRow   {
 
         crops.clear();
     }
-
-
 
 
 }

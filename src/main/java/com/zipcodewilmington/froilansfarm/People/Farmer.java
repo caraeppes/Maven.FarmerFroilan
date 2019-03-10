@@ -14,7 +14,7 @@ public class Farmer extends PersonDecorator implements Rider, Botanist, Person {
 
     private Farm farm;
 
-    public Farmer(Person person, Farm farm){
+    public Farmer(Person person, Farm farm) {
         super(person);
         this.farm = farm;
     }
@@ -66,14 +66,17 @@ public class Farmer extends PersonDecorator implements Rider, Botanist, Person {
 
 
     public void collect(Animal animal) throws Exception {
-        if(animal instanceof MilkableAnimal){
+        if (animal instanceof MilkableAnimal) {
             farm.getSilo().getInhabitants().add(((MilkableAnimal) animal).milk());
-        }
-        else if(animal instanceof Chicken){
+        } else if (animal instanceof Chicken) {
             farm.getSilo().getInhabitants().add(((Chicken) animal).yield());
-        }
-        else {
+        } else {
             throw new Exception("Cannot collect from this animal!");
         }
+    }
+
+    public void sellAtFarmStand(Edible e){
+        farm.getSilo().removeInhabitant(e);
+        farm.getFarmStand().addToBasket(e);
     }
 }

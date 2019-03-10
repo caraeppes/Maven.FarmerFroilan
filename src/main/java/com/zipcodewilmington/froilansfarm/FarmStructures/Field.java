@@ -7,12 +7,7 @@ import java.util.List;
 
 public class Field {
 
-     private List<CropRow> cropRows = new ArrayList<>();
-
-
-    public Field(List<CropRow> cropRows) {
-        this.cropRows = cropRows;
-    }
+    private List<CropRow> cropRows = new ArrayList<>();
 
     public Field() {
     }
@@ -25,21 +20,18 @@ public class Field {
         this.cropRows = cropRows;
     }
 
-    public void add(CropRow cropRow){
+    public void add(CropRow cropRow) {
         cropRows.add(cropRow);
-
     }
 
-    public void remove(CropRow cropRow){
+
+    public void remove(CropRow cropRow) {
         cropRows.remove(cropRow);
-
     }
-    public void cleanField(){
+
+    public void cleanField() {
         cropRows.clear();
-
     }
-
-
 
 
 }

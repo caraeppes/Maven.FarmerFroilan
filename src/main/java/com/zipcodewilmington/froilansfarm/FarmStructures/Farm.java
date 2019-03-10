@@ -16,6 +16,7 @@ public class Farm {
     private Silo silo;
     private List<GoatStable> goatStables;
     private List<CowBarn> cowBarns;
+    private FarmStand farmStand;
 
 
     public Farm() {
@@ -27,6 +28,7 @@ public class Farm {
         silo = new Silo();
         goatStables = new ArrayList<>();
         cowBarns = new ArrayList<>();
+        farmStand = new FarmStand();
 
     }
 
@@ -68,5 +70,13 @@ public class Farm {
 
     public List<CowBarn> getCowBarns() {
         return cowBarns;
+    }
+
+    public FarmStand getFarmStand() {
+        return farmStand;
+    }
+
+    public void setFarmStand(FarmStand farmStand) {
+        this.farmStand = farmStand;
     }
 }
