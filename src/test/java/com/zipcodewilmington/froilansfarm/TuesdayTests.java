@@ -5,11 +5,11 @@ import com.zipcodewilmington.froilansfarm.Edibles.Carrot;
 import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
 import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Field;
-import com.zipcodewilmington.froilansfarm.FarmStructures.Silo;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.People.Farmer;
 import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,14 +17,19 @@ import java.util.List;
 
 public class TuesdayTests {
 
+    FroilansFarm froilansFarm;
+    Tractor tractor;
+    Farmer froilan;
+
+    @Before
+    public void setUp(){
+        froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+        tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
+        froilan = froilansFarm.getFroilan();
+    }
 
     @Test
     public void mountTractorTest(){
-        // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
-        Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
-        Farmer froilan = froilansFarm.getFroilan();
-
         // When
         froilan.mount(tractor);
         boolean actual = tractor.isMounted();
@@ -36,9 +41,6 @@ public class TuesdayTests {
     @Test
     public void dismountTractorTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
-        Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
-        Farmer froilan = froilansFarm.getFroilan();
         froilan.mount(tractor);
 
         // When
@@ -53,10 +55,7 @@ public class TuesdayTests {
    @Test
     public void harvestCropsThatHaveBeenFertilizedTest(){
         // Given
-       FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
        Field field = froilansFarm.getField();
-       Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
-       Farmer froilan = froilansFarm.getFroilan();
 
        froilan.mount(tractor);
         for (CropRow cropRow : field.getCropRows()){
@@ -80,10 +79,7 @@ public class TuesdayTests {
     @Test
     public void harvestCropsThatHaveNotBeenFertilized(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
         Field field = froilansFarm.getField();
-        Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
-        Farmer froilan = froilansFarm.getFroilan();
 
         froilan.mount(tractor);
         for (CropRow cropRow : field.getCropRows()){
@@ -107,10 +103,7 @@ public class TuesdayTests {
     @Test
     public void harvestCropsThatHaveAlreadyBeenHarvestedTest() {
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
         Field field = froilansFarm.getField();
-        Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
-        Farmer froilan = froilansFarm.getFroilan();
 
         froilan.mount(tractor);
         for (CropRow cropRow : field.getCropRows()) {
@@ -132,10 +125,7 @@ public class TuesdayTests {
     @Test
     public void harvestCropsSiloTest() {
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
         Field field = froilansFarm.getField();
-        Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
-        Farmer froilan = froilansFarm.getFroilan();
 
         froilan.mount(tractor);
         for (CropRow cropRow : field.getCropRows()) {
@@ -167,8 +157,6 @@ public class TuesdayTests {
     @Test
     public void tractorMakeNoiseTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
-        Tractor tractor = (Tractor) froilansFarm.getFarm().getFarmVehicles().get(0);
         String expected = "Chug-chug-chug!";
 
         // When

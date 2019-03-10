@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.Animals.Horse;
 import com.zipcodewilmington.froilansfarm.Crops.CropRow;
 
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;

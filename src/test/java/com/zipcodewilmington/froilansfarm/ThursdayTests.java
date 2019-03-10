@@ -1,22 +1,31 @@
 package com.zipcodewilmington.froilansfarm;
 
 import com.zipcodewilmington.froilansfarm.Animals.*;
-import com.zipcodewilmington.froilansfarm.Edibles.Milk;
 import com.zipcodewilmington.froilansfarm.FarmStructures.*;
 import com.zipcodewilmington.froilansfarm.People.Farmer;
 import com.zipcodewilmington.froilansfarm.People.Pilot;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class ThursdayTests {
 
+    FroilansFarm froilansFarm;
+    Farmer froilan;
+    Pilot froilanda;
+    Farm farm;
+
+    @Before
+    public void setUp(){
+        froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+        froilan = froilansFarm.getFroilan();
+        froilanda = froilansFarm.getFroilanda();
+        farm = froilansFarm.getFarm();
+    }
 
     @Test
     public void froilanMakeNoiseTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
-        Farmer froilan = froilansFarm.getFroilan();
-
         String expected = "Howdy! I'm a Farmer!";
 
         // When
@@ -30,8 +39,6 @@ public class ThursdayTests {
     @Test
     public void froilandaMakeNoiseTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
-        Pilot froilanda = froilansFarm.getFroilanda();
         String expected = "Hi!  I'm a pilot!";
 
         // When
@@ -44,8 +51,6 @@ public class ThursdayTests {
     @Test
     public void talkToGoatTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
-        Farm farm = froilansFarm.getFarm();
         String expected = "Meeehhhh!";
 
         // When
@@ -62,8 +67,6 @@ public class ThursdayTests {
     @Test
     public void talkToHorseTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
-        Farm farm = froilansFarm.getFarm();
         String expected = "Neigh!";
 
         // When
@@ -79,8 +82,6 @@ public class ThursdayTests {
     @Test
     public void talkToCowTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
-        Farm farm = froilansFarm.getFarm();
         String expected = "Moooooo!";
 
         // When
@@ -97,8 +98,6 @@ public class ThursdayTests {
     @Test
     public void talkToChickenTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
-        Farm farm = froilansFarm.getFarm();
         String expected = "Cluck-cluck-cluck!";
 
         // When
@@ -114,7 +113,6 @@ public class ThursdayTests {
     @Test
     public void froilanBasicPersonMakeNoiseTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
         String expected = "I'm a person.";
 
         // When
@@ -127,7 +125,6 @@ public class ThursdayTests {
     @Test
     public void froilandaBasicPersonMakeNoiseTest(){
         // Given
-        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
         String expected = "I'm a person.";
 
         // When

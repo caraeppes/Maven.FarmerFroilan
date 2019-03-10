@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
-import com.zipcodewilmington.froilansfarm.FarmStructures.Silo;
+import com.zipcodewilmington.froilansfarm.Edibles.Milk;
 import com.zipcodewilmington.froilansfarm.Interfaces.Animal;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
@@ -20,6 +20,7 @@ public abstract class MilkableAnimal implements Animal {
         return foodEaten;
     }
 
-
-    public abstract void milk(Silo silo);
+    public Milk milk(){
+        return new Milk();
+    }
 }

@@ -16,11 +16,13 @@ public class Chicken extends Produce implements Animal {
         super();
     }
 
-    public Edible yield() {
+    public Edible yield() throws Exception {
         if(!getHasBeenFertilized()){
             return new EdibleEgg();
         }
-        return null;
+        else{
+            throw new Exception("This chicken has been fertilized and it doesn't produce edible eggs.");
+        }
     }
 
     @Override

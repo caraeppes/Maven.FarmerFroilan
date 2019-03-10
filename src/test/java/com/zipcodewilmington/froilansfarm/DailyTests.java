@@ -28,10 +28,10 @@ public class DailyTests {
 
     @Before
     public void setUp() {
-        MainApplication main = new MainApplication();
-        farm = main.getFroilansFarm().getFarm();
-        froilanda = main.getFroilansFarm().getFroilanda();
-        froilan = main.getFroilansFarm().getFroilan();
+        FroilansFarm froilansFarm = FroilansFarm.getInstance();
+        farm = froilansFarm.getFarm();
+        froilanda = froilansFarm.getFroilanda();
+        froilan = froilansFarm.getFroilan();
     }
 
     @After

@@ -10,11 +10,6 @@ public class Silo extends Shelter<Edible> {
         super();
     }
 
-
-    public void addEdibles(List<Edible> edibles){
-        addAll(edibles);
-    }
-
     public List<Edible> getEdibles(){
         List<Edible> edibles = new ArrayList<>();
         for(Object o : super.getInhabitants()){

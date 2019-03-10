@@ -15,6 +15,10 @@ public abstract class Produce {
         return hasBeenFertilized;
     }
 
-    public abstract Edible yield();
+    public void setHasBeenFertilized(boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
+
+    public abstract Edible yield() throws Exception;
 
 }

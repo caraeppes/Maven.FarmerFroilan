@@ -23,7 +23,6 @@ public class FridayTests {
     Farm farm;
     Pilot froilanda;
     Farmer froilan;
-    FarmVehicle farmvehicle;
     CropDuster cropduster;
     CropRow croprow;
 
@@ -49,8 +48,7 @@ public class FridayTests {
 
 
     @Test
-    public void pluckCropsfromCroprowTest() {
-
+    public void pickCropsfromCroprowTest() {
 
         // Given
         List<Crop> crops = new ArrayList<>();

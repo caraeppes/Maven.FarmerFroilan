@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.People;
 
+import com.zipcodewilmington.froilansfarm.Animals.Chicken;
+import com.zipcodewilmington.froilansfarm.Animals.MilkableAnimal;
 import com.zipcodewilmington.froilansfarm.Crops.CropRow;
 import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
@@ -60,5 +62,18 @@ public class Farmer extends PersonDecorator implements Rider, Botanist, Person {
     @Override
     public void feed(Eater eater, Edible edible) {
         decoratedPerson.feed(eater, edible);
+    }
+
+
+    public void collect(Animal animal) throws Exception {
+        if(animal instanceof MilkableAnimal){
+            farm.getSilo().getInhabitants().add(((MilkableAnimal) animal).milk());
+        }
+        else if(animal instanceof Chicken){
+            farm.getSilo().getInhabitants().add(((Chicken) animal).yield());
+        }
+        else {
+            throw new Exception("Cannot collect from this animal!");
+        }
     }
 }
