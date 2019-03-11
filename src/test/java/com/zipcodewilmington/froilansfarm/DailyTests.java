@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-
 import com.zipcodewilmington.froilansfarm.Animals.Chicken;
 import com.zipcodewilmington.froilansfarm.Animals.Cow;
 import com.zipcodewilmington.froilansfarm.Animals.Goat;
@@ -18,7 +17,6 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 
 public class DailyTests {
 
@@ -73,7 +71,7 @@ public class DailyTests {
     @Test
     public void horseEatingCornTest() {
         // Given
-        Horse horse = (Horse) farm.getStables().get(0).getInhabitants().get(0);
+        Horse horse = farm.getStables().get(0).getInhabitants().get(0);
         int expected = 3;
 
         // When
@@ -89,7 +87,7 @@ public class DailyTests {
     @Test
     public void froilanFeedHorsesTest() {
         // Given
-        Horse horse = (Horse) farm.getStables().get(0).getInhabitants().get(0);
+        Horse horse = farm.getStables().get(0).getInhabitants().get(0);
         int expected = 3;
 
         // When

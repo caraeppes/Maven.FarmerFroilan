@@ -23,7 +23,9 @@ public class Pilot extends PersonDecorator implements Rider, Person {
     @Override
     public void dismount(Rideable rideable) {
         rideable.setMounted(false);
-
+        if(rideable instanceof Aircraft){
+            ((Aircraft) rideable).setFlying(false);
+        }
     }
 
 

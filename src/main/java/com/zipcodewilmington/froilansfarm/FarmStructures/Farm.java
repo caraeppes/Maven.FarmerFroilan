@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm.FarmStructures;
 
-
 import com.zipcodewilmington.froilansfarm.Vehicles.FarmVehicle;
 
 import java.util.ArrayList;
@@ -74,9 +73,5 @@ public class Farm {
 
     public FarmStand getFarmStand() {
         return farmStand;
-    }
-
-    public void setFarmStand(FarmStand farmStand) {
-        this.farmStand = farmStand;
     }
 }

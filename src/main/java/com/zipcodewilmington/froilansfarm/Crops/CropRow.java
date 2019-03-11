@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CropRow   {
-    public boolean isHasBeenFertilized() {
+    public boolean hasBeenFertilized() {
         return hasBeenFertilized;
     }
 
     public void setHasBeenFertilized(boolean hasBeenFertilized) {
         this.hasBeenFertilized = hasBeenFertilized;
+        for(Crop crop : this.getCrops()){
+            crop.setHasBeenFertilized(hasBeenFertilized);
+        }
     }
 
     private boolean hasBeenFertilized;

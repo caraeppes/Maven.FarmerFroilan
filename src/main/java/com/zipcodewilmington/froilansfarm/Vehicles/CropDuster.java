@@ -6,55 +6,45 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Aircraft;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CropDuster extends FarmVehicle implements Aircraft, Rideable {
 
-    public List<CropRow> getCroprowlist() {
-        return croprowlist;
-    }
-
-
-    private List<CropRow> croprowlist = new ArrayList<>();
-
+    private boolean isFlying = false;
 
     public void fertilize(CropRow cropRow) {
-
-
-            if (isMounted()) {
-
-                croprowlist.add(cropRow);
-
-
-              cropRow.setHasBeenFertilized(true);
-
-              setMounted(false);
-
-            }
-
-        }
+            cropRow.setHasBeenFertilized(true);
+    }
 
 
     @Override
     public void fly() {
+        if (isMounted()) {
+            setFlying(true);
+        }
+    }
 
+    @Override
+    public void setFlying(boolean isFlying) {
+        this.isFlying = isFlying;
+    }
 
-        setMounted(true);
-
-
+    @Override
+    public boolean isFlying() {
+        return isFlying;
     }
 
 
     @Override
     public void operate(Farm farm) {
-
-
+        if(isFlying){
+            makeNoise();
+            for(CropRow cropRow : farm.getField().getCropRows()){
+                fertilize(cropRow);
+            }
+        }
     }
 
     @Override
     public String makeNoise() {
-
         return "grrr";
     }
 

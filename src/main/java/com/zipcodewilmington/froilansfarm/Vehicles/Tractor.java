@@ -9,15 +9,15 @@ public class Tractor extends FarmVehicle {
 
     public void harvest(Crop crop, Silo silo) {
 
-        if (crop.isHasBeenFertilized() && !crop.isHasBeenHarvested()) {
+        if (crop.hasBeenFertilized() && !crop.hasBeenHarvested()) {
             crop.setHasBeenHarvested(true);
             silo.add(crop.yield());
         }
         else {
-            if(!crop.isHasBeenFertilized()){
+            if(!crop.hasBeenFertilized()){
                 System.out.println("Cannot harvest a crop that has not been fertilized.");
             }
-            if(crop.isHasBeenHarvested()){
+            if(crop.hasBeenHarvested()){
                 System.out.println("Cannot harvest a crop that has already been harvested.");
             }
         }

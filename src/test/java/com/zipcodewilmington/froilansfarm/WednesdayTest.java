@@ -105,8 +105,4 @@ public class WednesdayTest {
         // When
         froilan.collect(chicken);
     }
-
-
-
-
 }

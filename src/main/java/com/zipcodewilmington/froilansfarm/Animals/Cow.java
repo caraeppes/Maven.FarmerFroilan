@@ -1,12 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
-import com.zipcodewilmington.froilansfarm.FarmStructures.Silo;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cow extends MilkableAnimal {
-
 
     public static List<Cow> makeCows(int numberOfCows){
         List<Cow> cows = new ArrayList<>();
@@ -20,7 +17,4 @@ public class Cow extends MilkableAnimal {
     public String makeNoise(){
         return "Moooooo!";
     }
-
-
-
 }

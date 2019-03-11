@@ -1,14 +1,11 @@
 package com.zipcodewilmington.froilansfarm;
 
+import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import com.zipcodewilmington.froilansfarm.Crops.CropRow;
-
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
-import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.People.Farmer;
 import com.zipcodewilmington.froilansfarm.People.Pilot;
 import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
-import com.zipcodewilmington.froilansfarm.Vehicles.FarmVehicle;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,127 +16,137 @@ public class MondayTests {
     Farm farm;
     Pilot froilanda;
     Farmer froilan;
-    FarmVehicle farmvehicle;
-    CropDuster cropduster;
-    CropRow croprow;
+    CropDuster cropDuster;
 
     @Before
     public void setUp() {
-        MainApplication main = new MainApplication();
-        farm = main.getFroilansFarm().getFarm();
-        froilanda = main.getFroilansFarm().getFroilanda();
-        froilan = main.getFroilansFarm().getFroilan();
-        cropduster = new CropDuster();
-        croprow = new CropRow();
-
-    }
-
-    @After
-    public void tearDown(){
-        for(CropRow cropRow : farm.getField().getCropRows()){
-            cropRow.getCrops().clear();
-        }
-
-        farm.getSilo().getEdibles().clear();
+        FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+        farm = froilansFarm.getFarm();
+        froilanda = froilansFarm.getFroilanda();
+        froilan = froilansFarm.getFroilan();
+        cropDuster = (CropDuster) farm.getFarmVehicles().get(1);
     }
 
 
     @Test
-    public void froilandamountcropdusterTest() {
-
-
+    public void froilandaGetAircraftTest() {
         // Given
-
-        froilanda.setAircraft(cropduster);
-        // When
-
-        froilanda.mount((Rideable) froilanda.getAircraft());
-        //Then
-
-        Assert.assertTrue(((Rideable) froilanda.getAircraft()).isMounted());
-    }
-
-    @Test
-    public void froilandaflycropdusterTest() {
-
-
-        // Given
-
-        froilanda.setAircraft(cropduster);
-        // When
-
-        froilanda.mount((Rideable)froilanda.getAircraft());
-
-        cropduster.fly();
-
-        //Then
-        Assert.assertEquals( true, cropduster.isMounted());
-    }
-
-
-    @Test
-    public void froilandafirtilizefieldrTest() {
-        // Given
-        froilanda.setAircraft(cropduster);
-
-        froilanda.mount(froilanda.getAircraft());
-
-        int expected = 4;
+        CropDuster expected = cropDuster;
 
         // When
-        for (int i = 0; i < 4; i++) {
-            cropduster.setMounted(true);
-            cropduster.fertilize(croprow);
-        }
-        int actual = cropduster.getCroprowlist().size();
+        CropDuster actual = (CropDuster) froilanda.getAircraft();
 
         // Then
         Assert.assertEquals(expected, actual);
     }
 
-
     @Test
-    public void FieldhasbeenfertilizedTest() {
-
-
+    public void froilandaMountCropdusterTest() {
         // Given
-
-        froilanda.setAircraft(cropduster);
-        froilanda.mount((Rideable) froilanda.getAircraft());
-
-        cropduster.fertilize(croprow);
-        Boolean expected = true;
+        cropDuster.setMounted(false);
 
         // When
-        for (int i = 0; i < 3; i++) {
-            cropduster.fertilize(croprow);
+        froilanda.mount(cropDuster);
+
+        // Then
+        Assert.assertTrue(cropDuster.isMounted());
+    }
+
+
+    @Test
+    public void froilandaFlyCropdusterTest() {
+        // Given
+        cropDuster.setFlying(false);
+        froilanda.mount(cropDuster);
+
+        // When
+        cropDuster.fly();
+
+        // Then
+        Assert.assertTrue(cropDuster.isFlying());
+    }
+
+
+    @Test
+    public void froilandaFlyCropdusterNotMountedTest() {
+        // Given
+        cropDuster.setFlying(false);
+        froilanda.dismount(cropDuster);
+
+        // When
+        cropDuster.fly();
+
+        // Then
+        Assert.assertFalse(cropDuster.isFlying());
+    }
+
+
+    @Test
+    public void operateCropDusterTest() {
+        // Given
+        for (CropRow cropRow : farm.getField().getCropRows()) {
+            cropRow.setHasBeenFertilized(false);
         }
-        //Then
-        Assert.assertEquals(expected, croprow.isHasBeenFertilized());
+        froilanda.mount(cropDuster);
+        cropDuster.fly();
+
+        // When
+        cropDuster.operate(farm);
+
+        // Then
+        for (CropRow cropRow : farm.getField().getCropRows()) {
+            Assert.assertTrue(cropRow.hasBeenFertilized());
+            for (Crop crop : cropRow.getCrops()) {
+                Assert.assertTrue(crop.hasBeenFertilized());
+            }
+        }
+    }
+
+    @Test
+    public void operateNotFlyingTest() {
+        // Given
+        for (CropRow cropRow : farm.getField().getCropRows()) {
+            cropRow.setHasBeenFertilized(false);
+        }
+        froilanda.mount(cropDuster);
+        cropDuster.setFlying(false);
+
+        // When
+        cropDuster.operate(farm);
+
+        // Then
+        for (CropRow cropRow : farm.getField().getCropRows()) {
+            Assert.assertFalse(cropRow.hasBeenFertilized());
+            for (Crop crop : cropRow.getCrops()) {
+                Assert.assertFalse(crop.hasBeenFertilized());
+            }
+        }
     }
 
 
 
     @Test
-    public void FieldhasbeenfertilizedUnmount() {
-
-
+    public void froilandaDismountCropdusterTest() {
         // Given
-
-        froilanda.setAircraft(cropduster);
-        froilanda.mount((Rideable) froilanda.getAircraft());
-
-        cropduster.fertilize(croprow);
-        Boolean expected = false;
+        froilanda.mount(cropDuster);
 
         // When
-        for (int i = 0; i < 3; i++) {
-            cropduster.fertilize(croprow);
-        }
-        //Then
-        Assert.assertEquals(expected, cropduster.isMounted());
+        froilanda.dismount(cropDuster);
+
+        // Then
+        Assert.assertFalse(cropDuster.isMounted());
     }
 
 
+    @Test
+    public void cropDusterMakeNoiseTest() {
+        // Given
+        String expected = "grrr";
 
+        // When
+        String actual = cropDuster.makeNoise();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
 }

@@ -71,7 +71,7 @@ public class TuesdayTests {
         // Then
         for(CropRow cropRow : field.getCropRows()){
             for(Crop crop : cropRow.getCrops()){
-                Assert.assertTrue(crop.isHasBeenHarvested());
+                Assert.assertTrue(crop.hasBeenHarvested());
             }
         }
     }
@@ -95,7 +95,7 @@ public class TuesdayTests {
         // Then
         for(CropRow cropRow : field.getCropRows()){
             for(Crop crop : cropRow.getCrops()){
-                Assert.assertFalse(crop.isHasBeenHarvested());
+                Assert.assertFalse(crop.hasBeenHarvested());
             }
         }
     }
