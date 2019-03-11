@@ -31,20 +31,9 @@ public class CropRow   {
         crops.add(crop);
     }
 
-    public void setCrops(List<Crop> crops) {
-        this.crops = crops;
-    }
-
-    public void removeCrops(Crop crop){
-
-        crops.remove(crop);
-    }
-    public void removeCroprow(List<Crop> crops){
-
+    public void clearCrops(){
         crops.clear();
     }
-
-
 }
 
 

@@ -16,22 +16,7 @@ public class Field {
         return cropRows;
     }
 
-    public void setCropRows(List<CropRow> cropRows) {
-        this.cropRows = cropRows;
-    }
-
     public void add(CropRow cropRow) {
         cropRows.add(cropRow);
     }
-
-
-    public void remove(CropRow cropRow) {
-        cropRows.remove(cropRow);
-    }
-
-    public void cleanField() {
-        cropRows.clear();
-    }
-
-
 }

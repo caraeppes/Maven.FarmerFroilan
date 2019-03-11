@@ -8,6 +8,7 @@ import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
 import com.zipcodewilmington.froilansfarm.Interfaces.*;
 import com.zipcodewilmington.froilansfarm.PersonDecorator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Farmer extends PersonDecorator implements Rider, Botanist, Person {
@@ -78,5 +79,11 @@ public class Farmer extends PersonDecorator implements Rider, Botanist, Person {
     public void sellAtFarmStand(Edible e){
         farm.getSilo().removeInhabitant(e);
         farm.getFarmStand().addToBasket(e);
+    }
+
+    public void cleanField(){
+        for(CropRow cropRow : farm.getField().getCropRows()){
+            cropRow.clearCrops();
+        }
     }
 }

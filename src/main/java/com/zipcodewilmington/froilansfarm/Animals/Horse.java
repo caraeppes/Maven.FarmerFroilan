@@ -23,7 +23,6 @@ public class Horse implements Rideable, Animal {
 
     @Override
     public String makeNoise() {
-
         return "Neigh!";
     }
 

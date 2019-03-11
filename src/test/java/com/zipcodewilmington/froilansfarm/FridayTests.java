@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 import com.zipcodewilmington.froilansfarm.Crops.*;
 import com.zipcodewilmington.froilansfarm.FarmStructures.Farm;
+import com.zipcodewilmington.froilansfarm.FarmStructures.Field;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.People.Farmer;
 import com.zipcodewilmington.froilansfarm.People.Pilot;
@@ -17,135 +18,55 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-
 public class FridayTests {
 
     Farm farm;
-    Pilot froilanda;
     Farmer froilan;
-    CropDuster cropduster;
-    CropRow croprow;
 
     @Before
     public void setUp() {
-        MainApplication main = new MainApplication();
-        farm = main.getFroilansFarm().getFarm();
-        froilanda = main.getFroilansFarm().getFroilanda();
-        froilan = main.getFroilansFarm().getFroilan();
-        cropduster = new CropDuster();
-        croprow = new CropRow();
-
+       FroilansFarm froilansFarm = FroilansFarm.getInstance().testFroilansFarm();
+       farm = froilansFarm.getFarm();
+       froilan = froilansFarm.getFroilan();
     }
 
-    @After
-    public void tearDown() {
-        for (CropRow cropRow : farm.getField().getCropRows()) {
-            cropRow.getCrops().clear();
-        }
+    @Test
+    public void clearOneCropRow(){
+        // Given
+        CropRow cropRow = farm.getField().getCropRows().get(0);
+        froilan.plant(new CornStalk(), cropRow);
+        froilan.plant(new TomatoPlant(), cropRow);
+        int expectedSize = 0;
 
-        farm.getSilo().getEdibles().clear();
+        // When
+        cropRow.clearCrops();
+        int actualSize = cropRow.getCrops().size();
+
+        // Then
+        Assert.assertEquals(expectedSize, actualSize);
     }
 
 
     @Test
-    public void pickCropsfromCroprowTest() {
-
+    public void cleanFieldTest(){
         // Given
-        List<Crop> crops = new ArrayList<>();
-        crops.add(new TomatoPlant());
-        crops.add(new CarrotPlant());
-        crops.add(new CornStalk());
+        Field field = farm.getField();
+        for(CropRow cropRow : field.getCropRows()){
+            froilan.plant(new CarrotPlant(), cropRow);
+            froilan.plant(new TomatoPlant(), cropRow);
+            froilan.plant(new CornStalk(), cropRow);
+        }
+        int expectedSize = 0;
 
-        // for (CropRow cropRow : farm.getField().getCropRows()) {
+        // When
+        froilan.cleanField();
 
-        croprow.setCrops(crops);
-
-
-        //When
-        croprow.removeCrops(crops.get(0));
-        croprow.removeCrops(crops.get(1));
-        //Then
-        int expected = 1;
-        int actual = crops.size();
-
-        Assert.assertEquals(expected, actual);
-    }
-
-
-    @Test
-    public void clearAllCropsFromCroprowTest() {
-
-
-        // Given
-        List<Crop> crops = new ArrayList<>();
-        crops.add(new TomatoPlant());
-        crops.add(new CarrotPlant());
-        crops.add(new CornStalk());
-
-        for (CropRow cropRow : farm.getField().getCropRows()) {
-
-            croprow.setCrops(crops);
-
-
-            //When
-            croprow.removeCroprow(crops);
-            //Then
-            int expected = 0;
-            int actual = crops.size();
-
-            Assert.assertEquals(expected, actual);
+        // Then
+        for(CropRow cropRow : field.getCropRows()){
+            int actualSize = cropRow.getCrops().size();
+            Assert.assertEquals(expectedSize, actualSize);
         }
     }
-
-
-        @Test
-        public void removeCroprowFromFieldTest () {
-
-
-            // Given
-            List<CropRow> croprow = new ArrayList<>();
-
-            for (int i = 0; i < 5; i++) {
-                croprow.add(new CropRow());
-            }
-
-            farm.getField().setCropRows(croprow);
-            //When
-            farm.getField().remove(croprow.get(0));
-            farm.getField().remove(croprow.get(1));
-            //Then
-            int expected = 3;
-            int actual = farm.getField().getCropRows().size();
-
-            Assert.assertEquals(expected, actual);
-        }
-
-    @Test
-    public void cleanFieldTest () {
-
-
-        // Given
-        List<CropRow> croprow = new ArrayList<>();
-
-        for (int i = 0; i < 5; i++) {
-            croprow.add(new CropRow());
-        }
-
-        farm.getField().setCropRows(croprow);
-        //When
-        farm.getField().cleanField();
-
-        //Then
-       int expected =croprow.size();
-       int actual = 0;
-
-        Assert.assertEquals(expected, actual);
-        Assert.assertTrue(croprow.isEmpty());
-    }
-
-
-
-
 }
 
 

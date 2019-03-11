@@ -8,23 +8,19 @@ import java.util.List;
 
 public class Stable extends Shelter {
 
-
-    public Stable(){
+    public Stable() {
         super();
     }
 
-    public void addHorses(List<Horse> horses){
+    public void addHorses(List<Horse> horses) {
         addAll(horses);
     }
 
-    public List<Horse> getInhabitants(){
+    public List<Horse> getInhabitants() {
         List<Horse> horses = new ArrayList<>();
-        for(Object o : super.getInhabitants()){
-            horses.add((Horse) o );
+        for (Object o : super.getInhabitants()) {
+            horses.add((Horse) o);
         }
-
         return horses;
     }
-
-
 }

@@ -7,15 +7,15 @@ public abstract class Shelter<T> {
 
     private List<T> inhabitants;
 
-    public Shelter(){
+    public Shelter() {
         inhabitants = new ArrayList<>();
     }
 
-    public void add(T inhabitant){
+    public void add(T inhabitant) {
         inhabitants.add(inhabitant);
     }
 
-    public void addAll(List<T> list){
+    public void addAll(List<T> list) {
         inhabitants.addAll(list);
     }
 
@@ -23,7 +23,7 @@ public abstract class Shelter<T> {
         return inhabitants;
     }
 
-    public void removeInhabitant(T inhabitant){
+    public void removeInhabitant(T inhabitant) {
         inhabitants.remove(inhabitant);
     }
 }

@@ -29,7 +29,7 @@ public class FarmStand {
         return basket;
     }
 
-    public void addToBasket(Edible e){
+    public void addToBasket(Edible e) {
         basket.add(e);
     }
 }
